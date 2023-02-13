@@ -1,0 +1,14 @@
+server:
+  port: 6003
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka3000.com:3000/eureka/ # eureka服务端提供的注册地址
+  instance:
+    instance-id: power-3 # 此实例注册到eureka服务端的唯一实例ID
+    prefer-ip-address: true # 是否显示IP地址
+    lease-renewal-interval-in-seconds: 10 # eureka客户端需要多长时间发送心跳给eureka服务端，表明它还活着
+    lease-expiration-duration-in-seconds: 30 # Eureka服务端在接收到实例最后一次心跳后，需要等待多长时间认为服务挂了
+spring:
+  application:
+    name: server-power # 此实例注册到eureka服务端的 name
